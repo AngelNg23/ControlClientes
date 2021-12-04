@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Datos de la Persona</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <h1>Datos de la Persona</h1>
+        <a th:href="@{/}">Regresar</a>
+        <br/>
+        <form th:action="@{/guardar}" method="post" th:object="${persona}">
+            <input type="hidden" name="idPersona" th:field="*{idPersona}"/>
+            <br/>
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" th:field="*{nombre}"/>
+            <br/>
+            <label for="apellido">Apellido Paterno:</label>
+            <input type="text" name="apellido-paterno" th:field="*{apellidoPaterno}"/>
+            <br/>
+            <label for="email">Apellido Materno:</label>
+            <input type="text" name="apellido-materno" th:field="*{apellidoMaterno}"/>
+            <br/>
+            <label for="telefono">Edad:</label>
+            <input type="text" name="edad" th:field="*{edad}"/>
+            <br/>
+            <label for="telefono">Peso:</label>
+            <input type="text" name="peso" th:field="*{peso}"/>
+            <br/>
+            <label for="telefono">Estatura:</label>
+            <input type="text" name="estatura" th:field="*{estatura}"/>
+            <br/>
+            <label for="telefono">Estado Civil:</label>
+            <input type="text" name="estadoCivil" th:field="*{estadoCivil}"/>
+            <br/>
+            <input type="submit" name="guardar" value="Guardar"/>
+        </form>
+    </body>
+</html>
